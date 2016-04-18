@@ -22,11 +22,11 @@ namespace Gaming {
         ~Agent();
 
         double getEnergy() const { return __energy; }
-        void addEnergy(double e) { __energy += e; }
+        void addEnergy(double e) { __energy += e; } //call when Interact-ing with resource
 
-        void age() override final;
+        void age() override final; // call at end of takeTurn or whatever that's called?
 
-        bool isViable() const override final { return !isFinished() && __energy > 0.0; }
+//        bool isViable() const override final { return !isFinished() && __energy > 0.0; }
 
         Piece &operator*(Piece &other) override final;
         Piece &interact(Agent *) override final;

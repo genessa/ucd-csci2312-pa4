@@ -43,7 +43,7 @@ namespace Gaming {
         void setTurned(bool turned) { __turned = turned; }
 
         virtual void age() = 0;
-        virtual bool isViable() const = 0;
+        virtual bool isViable() const = 0; // see if agent's energy is below threshold
         virtual PieceType getType() const = 0;
 
         virtual ActionType takeTurn(const Surroundings &surr) const = 0; // note: doesn't actually change the object

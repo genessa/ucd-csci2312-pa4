@@ -7,7 +7,7 @@ _inheritance, polymorphism, board games, randomization_
 ### Goals
 
 1. Get experience with inheritance, polymorphism, and class hierarchies in the domain of board turn-based strategic games.
-2. Enrich your pallette of C++ tools to define complex behavior:
+2. Enrich your palette of C++ tools to define complex behavior:
   1. Abstract and concrete classes for hierarchical behavior extension.
   2. `virtual` functions and overriding to specialize behavior while supporting polymorphism.
   3. _functors_ to specify dynamic object behavior.
