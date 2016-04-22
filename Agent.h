@@ -26,7 +26,7 @@ namespace Gaming {
 
         void age() override final; // call at end of takeTurn or whatever that's called?
 
-//        bool isViable() const override final { return !isFinished() && __energy > 0.0; }
+        bool isViable() const override final { return !isFinished() && __energy > 0.0; }
 
         Piece &operator*(Piece &other) override final;
         Piece &interact(Agent *) override final;

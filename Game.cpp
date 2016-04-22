@@ -5,6 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <unordered_set>
+#include <sstream>
 #include "Game.h"
 #include "Simple.h"
 #include "Strategic.h"
@@ -246,7 +247,7 @@ namespace Gaming {
         __grid[index] = new Strategic(*this, position, STARTING_AGENT_ENERGY, s);
     }
 
-    void Game::addStrategic(unsigned x, unsigned y, Strategy *s = new DefaultAgentStrategy())
+    void Game::addStrategic(unsigned x, unsigned y, Strategy *s)
     {
         int index = y + (x * __width);
         if (y >= __width || x >= __height)
@@ -316,7 +317,7 @@ namespace Gaming {
         {
             for (int col = -1; col <= 1; ++col)
             {
-                if (pos.x + row >= 0 && pos.x + row < __height && pos.y + col >= 0 && pos.y + col < __width)
+                if ( (pos.x + row >= 0) && (pos.x + row < __height) && (pos.y + col >= 0) && (pos.y + col < __width) )
                 {
                     // In bounds
                     unsigned int index = pos.y + col + ((pos.x + row) * __width);
@@ -334,7 +335,7 @@ namespace Gaming {
     }
 
     // gameplay methods
-    static const ActionType Game::reachSurroundings(const Position &from, const Position &to) // note: STAY by default
+    const ActionType Game::reachSurroundings(const Position &from, const Position &to) // note: STAY by default
     {
         int x, y;
         x = to.x - from.x;
@@ -359,8 +360,8 @@ namespace Gaming {
         }
     }
 
-    static const Position Game::randomPosition(const std::vector<int> &positions)  // note: from Surroundings as an array
-    { return __posRandomizer(positions); }
+//    const Position Game::randomPosition(const std::vector<int> &positions)  // note: from Surroundings as an array
+//    { return __posRandomizer(positions); }
 
     bool Game::isLegal(const ActionType &ac, const Position &pos) const
     {
@@ -471,9 +472,8 @@ namespace Gaming {
         __round++;
     }
 
-    void Game::play(bool verbose = false)
+    void Game::play(bool verbose)
     {
-        // if verbose == true call print? maybe?
         __status = PLAYING; // when to change it to over? just after while loop?
         while (__status != OVER)
         { round();

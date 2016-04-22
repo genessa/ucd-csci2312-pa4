@@ -32,7 +32,7 @@ namespace Gaming {
             __turned = false;
         }
 
-//        virtual ~Piece(); // this doesn't get implemented riiiight?
+        Piece::~Piece() {} // this doesn't get implemented riiiight?
 //
 //        const Position getPosition() const { return __position; }
 //        void setPosition(const Position &p) { __position = p; }

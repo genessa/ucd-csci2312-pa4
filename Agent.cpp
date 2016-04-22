@@ -29,7 +29,7 @@ namespace Gaming
     }
 //    bool Agent::isViable()
 //    {
-//          Shouldn't need this, it's already implemented in Piece
+//
 //    }
 
 //    const override Agent::final{return !isFinished() && __energy > 0.0;}
